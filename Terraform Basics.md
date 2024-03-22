@@ -29,7 +29,7 @@ Recipe for deploying **Infrastructure as Code**
 ```
 WRITE ---> PLAN ---> APPLY
 ```
-
+---
 # **TERRAFORM KEY CONCEPTS**
 ## ***PLAN*** **|** ***APPLY*** **|** ***DESTROY***
 ---
