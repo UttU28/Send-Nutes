@@ -5,7 +5,9 @@
     -   -json
     -   -destroy
 * **Terraform APPLY**
-    -   -parallelism=
+    -   -var=
+    -   -var_dir=
+    -   -parallelism=10 (Default 10, can increase based on the **HARDWARE**)
     -   -input=false
     -   -target=
     -   -backup
@@ -28,7 +30,7 @@
 * **Terraform STATE**
     -   mv
     -   rm
-    -   show resourceName.name
+    -   show stateFileName
 * **Terraform SHOW**
 * **Terraform WORKSPACE**
     -   new newName

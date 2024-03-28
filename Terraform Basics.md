@@ -1,5 +1,9 @@
 # Project README
 
+## Read this for SUMMARY
+https://spacelift.io/blog/terraform-architecture
+---
+
 ## Author
 
 - **Name:** Utsav Chaudhary
