@@ -49,7 +49,7 @@ https://readme.so/editor
 
 ## **Virtual Machines (VMs)**
 -   Provides **Infrasructure as a Code (IaaC)**
--   Needs **Configuration, Updation and Management** if VM.
+-   VM Needs **Configuration, Updation and Management**.
 -   Group of VMs can be Managed using:
     -   **VM Scale Set (VMSS)**:
         -   Automate, Manage, Configure & Update multiple VM.
@@ -89,6 +89,7 @@ https://readme.so/editor
 ## **Containers**
 -   Lightweight alternative of VM if you dont want anything to do with OS.
 -   Run **Multiple Containers** on a single instance of **Physical / Virtual Host**
+-   Multiple instances of an application on a single host machine.
 -   **No Management of OS** is required
 -   Quick **Restart** on **FAILURE**
 -   **Container Services**:
@@ -102,9 +103,9 @@ https://readme.so/editor
     -   ### **Azure Container Apps**:
         -   Similar to **Azure Container Instances** but offers more **Control, Scalability and Management**
         -   **BUILT IN**:
+            -   **Load Balancing** & **Scaling**
             -   Managing Lifeycle of Containerised Apps
             -   Deployment
-            -   Scaling
             -   Monitoring
             -   CI / CD Pipeline
     -   ### **Azure Kubernetes Services**:
@@ -119,6 +120,7 @@ https://readme.so/editor
 -   Infrastructure is just **MUAHHHHH**, ready for Everything.
 -   **Hard timeout** keep that in mind.
 -   Just focus on the code and everything rest is taken care by the Functions
+-   Functions **Scale automatically** based on demand
 -   **Event Driven** can be triggered by various events like **HTTP requests, Database changes, Service Bus Messages**, many more.
 -   **Integrated Security** with ***Azure Active Directory*** for **Authentication** and **Authorization**
 
@@ -132,14 +134,70 @@ https://readme.so/editor
 
 ## **Azure App Service**
 -   Allows Management, Deploying and Developing of Web Apps and APIs.
+-   Enables automated deployments from GitHub, Azure DevOps, or any Git repo for **CI / CD**
 -   Supports framework such as Python, Java, NodeJS, ASP.NET
 -   Provides **BUILT-IN** support for **Scaling, Load Balancing and High Availability**
+-   Types:
+    -   Web Apps
+    -   API Apps
+    -   WebJobs
+    -   Mobile Apps
 
 ## **Azure Logic Apps**
 -   Automate Workflows and Integrate Applications, Data and Services ***WITHOUT CODE***.
 -   Many **CONNECTORS** are available for Azure Services and APIs.
 -   **TRIGGERS** are events that start logic apps, can be ***HTTP, Email, Message, File Change***
 -   Provides **Montoring and Analytics** service.
+
+
+# **AZURE NETWORKING OPTIONS**
+
+## **Virtual Network (VNet)**
+-   Fundamental Building block fo Connecting Resources and Services to Internet or with each other
+-   **SUBNET** is smaller Virtual Network, can implement **ISOLATION** on the resources for Private Access Only.
+-   All resources have **OUTBOUND** connection by Default. Can use **Public IP, NAT Gateway, Public Load Balancers** for managing traffic.
+-   **INBOUND** connections can be made by assigning **Public IP or Public Load Balancer**.
+-   **VNet PEERING** allows us to connect multiple VNets to each other. *(Merging 2 or more Villages, to make an interconnected TOWN)*
+-   Connect **ON-PREMISE Computers & Networks** to VNet by using:
+    -   **Point-to-Site VPN** : VNet and a single Computer, each Computer must configure it's connections.
+    -   **Site-to-Site VPN** : On-Premise VPN and Azure VPN
+    -   **Azure Express Routes** : Secure Private Connection of On-Premise N/W to Azure Cloud Services.
+-   Filter **NETWORK TRAFFIC**
+    -   **Network Security Groups** : Contains Inbound and Outbound traffic rules. Enables filters on IP Addr, Port and Protocol 
+    -   **Network Virtual Appliances** : It's a software that acts as hardware and can do **Firewall, Routing, Load Balancing, Intrusion Detection / Prevention System**.
+-   Route **NETWORK TRAFFIC**
+    -   **Route Tables** : Write custom ruls of how traffic should be Directed. Create table for how the packets are to be routed b/w subnets.
+    -   **Border Gateway Protocol (BGP)** : Routing protocol used to exchange routing information between different networks on the internet. Finds best path for data to travel.
+
+## **Virtual Private Newteork VPN**
+-   A virtual private network (VPN) uses an encrypted tunnel within another network. VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network. Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.
+-   **Azure VPN Gateway** is a network device or service that acts as an endpoint for VPN connections.
+-   **Azure VPN Gateway** Instances are deployed in a dedicated subnet of the virtual network and enable the following connectivity:
+    -   Point-to-Site
+    -   Site-to-Site
+    -   Network-to-Network
+-   Types of **VPN Gateways**:
+    -   **Policy-Based Gateways**:
+        -   Forwarding data is based on the defined policy.
+        -   Based on these policies, the VPN gateway decides whether to allow, deny, or route packets accordingly.
+    -   **Route-Based Gateways**:
+        -   Forwarding data is based on the Routing Tables.
+        -   BGP, OSPF and Static routes are used to make these Routing Tables.
+        -   Dynamic Routing and Scalability
+        ---
+        -   Connections between virtual networks
+        -   Point-to-site connections
+        -   Multisite connections
+        -   Coexistence with an Azure ExpressRoute gateway
+-   High Availability Scenarios
+    -   **Active / Standby**
+        -   VPN Gateway Resource: 1 Active and 1 Standby
+        -   Failover time: Few Seconds for Planned, 90s for Unplanned
+    -   **Active / Active**
+        -   Both are active and shares the load.
+        -   One down, another one ready to take/share the load.
+    -   **Zone Redundant Gateways**
+        -   The gateways are shared accros all the availability zones and provide fail over to them (duhhhh)
 
 # **Azure Storage Redundancy**
 -   **LRS (Locally Redundant Storage)**:
