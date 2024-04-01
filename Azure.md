@@ -47,6 +47,9 @@ https://readme.so/editor
 
 # **Computing Options**
 
+## **Virtualization**
+-   All applications on same OS share all the same resources and may have conflicts of data or ports or anyhting.
+-   To overcome that we user **Virtualization**, it helps us have individual OS for each application.  
 ## **Virtual Machines (VMs)**
 -   Provides **Infrasructure as a Code (IaaC)**
 -   VM Needs **Configuration, Updation and Management**.
@@ -90,7 +93,7 @@ https://readme.so/editor
 -   Lightweight alternative of VM if you dont want anything to do with OS.
 -   Run **Multiple Containers** on a single instance of **Physical / Virtual Host**
 -   Multiple instances of an application on a single host machine.
--   **No Management of OS** is required
+-   **No Management of OS** is required. ***SANDBOX*** Environment
 -   Quick **Restart** on **FAILURE**
 -   **Container Services**:
     -   ### **Container Group**:
@@ -116,7 +119,7 @@ https://readme.so/editor
         -   Offers more **Control and Flexibility** compared to above, but requires more **MANAGEMENT**
         -   Suitable for complex applications with high availability, scalability, and production-grade requirements.
 
-## **Azure Functions Service**:
+## **Azure Functions**:
 -   Infrastructure is just **MUAHHHHH**, ready for Everything.
 -   **Hard timeout** keep that in mind.
 -   Just focus on the code and everything rest is taken care by the Functions
@@ -153,11 +156,12 @@ https://readme.so/editor
 # **AZURE NETWORKING OPTIONS**
 
 ## **Virtual Network (VNet)**
+![alt text](image-5.png)
 -   Fundamental Building block fo Connecting Resources and Services to Internet or with each other
--   **SUBNET** is smaller Virtual Network, can implement **ISOLATION** on the resources for Private Access Only.
+-   **SUBNET** is smaller Virtual Network, can implement **ISOLATION**. IP Allocation in a good manner, grouping and securoty to it.
 -   All resources have **OUTBOUND** connection by Default. Can use **Public IP, NAT Gateway, Public Load Balancers** for managing traffic.
 -   **INBOUND** connections can be made by assigning **Public IP or Public Load Balancer**.
--   **VNet PEERING** allows us to connect multiple VNets to each other. *(Merging 2 or more Villages, to make an interconnected TOWN)*
+-   **VNet PEERING & VPN Gateways** allows us to connect multiple VNets to each other. *(Merging 2 or more Villages, to make an interconnected TOWN)*
 -   Connect **ON-PREMISE Computers & Networks** to VNet by using:
     -   **Point-to-Site VPN** : VNet and a single Computer, each Computer must configure it's connections.
     -   **Site-to-Site VPN** : On-Premise VPN and Azure VPN
@@ -171,7 +175,7 @@ https://readme.so/editor
 
 ## **Virtual Private Newteork VPN**
 -   A virtual private network (VPN) uses an encrypted tunnel within another network. VPNs are typically deployed to connect two or more trusted private networks to one another over an untrusted network. Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.
--   **Azure VPN Gateway** is a network device or service that acts as an endpoint for VPN connections.
+-   **Azure VPN Gateway** is a network device or service that acts as an endpoint for VPN connections. (Connects On-Premise Netwk Infra with the Badal (Cloud) Netwk Infra)
 -   **Azure VPN Gateway** Instances are deployed in a dedicated subnet of the virtual network and enable the following connectivity:
     -   Point-to-Site
     -   Site-to-Site
@@ -198,6 +202,30 @@ https://readme.so/editor
         -   One down, another one ready to take/share the load.
     -   **Zone Redundant Gateways**
         -   The gateways are shared accros all the availability zones and provide fail over to them (duhhhh)
+
+## **Traffic Distribution in Azure**
+-   How to achieve Scalability and High-Availability accross Same / Different Regions????? Kaun bachayega hame??? Hai koi Shoor Veer??
+-   2 hai Bhai:
+    -   ### **Azure Load Balancer**
+        ![alt text](image-7.png)
+        -   Distribution of Traffic accross Same Multiple Resources :lol:
+        -   Scaling Out
+        -   Supports ***TCP & UDP*** applications
+        *   **PUBLIC LOAD BALANCER** (Sab ka Legi) (For public to access)
+        *   **INTERNAL LOAD BALANCER** (Resources ka Legi) (For resources to access internally, not for PUBLIC)
+    -   ### **Azure Application Gateway**
+        ![alt text](image-6.png)
+        -   Use for WEB based traffic (HTTP/S)
+        -   SSL Termination (DECRYPTS  ` HTTPS --> HTTP ` for easy and fast request response)
+
+    - ONE MORE BONUS FROM MY SIDE
+    -   ### **Azure Content Delivery Network (CDN)**
+        -   All the static pages needs to be sent everytime a user makes a Request.
+        -   So, use **CDN** to have its presence in different locations for people to access it with ***Minimum Latnecy***. 
+        -   Over 120 locations are present. 
+
+# **Azure Storage Services**
+
 
 # **Azure Storage Redundancy**
 -   **LRS (Locally Redundant Storage)**:
