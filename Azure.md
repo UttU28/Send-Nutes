@@ -225,6 +225,11 @@ https://readme.so/editor
         -   So, use **CDN** to have its presence in different locations for people to access it with ***Minimum Latnecy***. 
         -   Over 120 locations are present. 
 
+## **Azure Front Door**
+-   Intellignet Traffic Routing
+-   Global Load Balancing
+-   Web Application Firewall
+
 # **Azure Storage Account Services**
 -   3 Types of Data needs to be STored:
     -   Structured (SQL)
@@ -236,9 +241,15 @@ https://readme.so/editor
 -   For storing **UNSTRUCTURED Data** (files, images, exe, movies)
 -   Three Storage Tiers:
     -   ***HOT*** : Frequently Accessed Data (Web Data)
-    -   ***COLD*** : Infrequently Accessed Data (Lower Availability)
-    -   ***ARCHIVE*** : Rarely Accessed Data (Cheapest)
+    -   ***COOL*** : Infrequently Accessed Data (Lower Availability) 30 Days
+    -   ***COLD*** : Infrequently Accessed Data (Lower Availability) 90 Days
+    -   ***ARCHIVE*** : Rarely Accessed Data (Cheapest) 180 Days
 -   **FEATURES**: Scalability, Durability, Secirity (IAM), Accessibility (API, SDK), RBAC, Versioning
+-   Types:
+    -   **Page BLOB**: General Purpose BLOB
+    -   **Block BLOB**: Streaming Data (Large file size)
+    -   **Append BLOB**: Append the data to existing **data / log** files at the end
+
 
 ## **Azure File Storage**
 -   ```FILE STORAGE --> SHARES --> FILES```
