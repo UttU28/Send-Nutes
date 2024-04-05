@@ -156,7 +156,8 @@ https://readme.so/editor
 # **AZURE NETWORKING OPTIONS**
 
 ## **Virtual Network (VNet)**
-![alt text](image-5.png)
+![alt text](images/image-5.png)
+-   Opens NETWORKING for all the Resources and makes it communicate.
 -   Fundamental Building block fo Connecting Resources and Services to Internet or with each other
 -   **SUBNET** is smaller Virtual Network, can implement **ISOLATION**. IP Allocation in a good manner, grouping and securoty to it.
 -   All resources have **OUTBOUND** connection by Default. Can use **Public IP, NAT Gateway, Public Load Balancers** for managing traffic.
@@ -207,14 +208,14 @@ https://readme.so/editor
 -   How to achieve Scalability and High-Availability accross Same / Different Regions????? Kaun bachayega hame??? Hai koi Shoor Veer??
 -   2 hai Bhai:
     -   ### **Azure Load Balancer**
-        ![alt text](image-7.png)
+        ![alt text](images/image-7.png)
         -   Distribution of Traffic accross Same Multiple Resources :lol:
         -   Scaling Out
         -   Supports ***TCP & UDP*** applications
         *   **PUBLIC LOAD BALANCER** (Sab ka Legi) (For public to access)
         *   **INTERNAL LOAD BALANCER** (Resources ka Legi) (For resources to access internally, not for PUBLIC)
     -   ### **Azure Application Gateway**
-        ![alt text](image-6.png)
+        ![alt text](images/image-6.png)
         -   Use for WEB based traffic (HTTP/S)
         -   SSL Termination (DECRYPTS  ` HTTPS --> HTTP ` for easy and fast request response)
 
@@ -224,10 +225,45 @@ https://readme.so/editor
         -   So, use **CDN** to have its presence in different locations for people to access it with ***Minimum Latnecy***. 
         -   Over 120 locations are present. 
 
-# **Azure Storage Services**
+# **Azure Storage Account Services**
+-   3 Types of Data needs to be STored:
+    -   Structured (SQL)
+    -   Semi-Structured (JSON)
+    -   Un-Structured (FILES)
 
+## **Azure BLob Storage**
+-   ```BLOB STORAGE --> CONTAINERS --> BLOBS```
+-   For storing **UNSTRUCTURED Data** (files, images, exe, movies)
+-   Three Storage Tiers:
+    -   ***HOT*** : Frequently Accessed Data (Web Data)
+    -   ***COLD*** : Infrequently Accessed Data (Lower Availability)
+    -   ***ARCHIVE*** : Rarely Accessed Data (Cheapest)
+-   **FEATURES**: Scalability, Durability, Secirity (IAM), Accessibility (API, SDK), RBAC, Versioning
 
-# **Azure Storage Redundancy**
+## **Azure File Storage**
+-   ```FILE STORAGE --> SHARES --> FILES```
+-   Same as BLOB Storage but you access **SHARES** using ***SMB*** protocol.
+-   Access via **SHARED DRIVE** Protocol
+-   Extend **On-Premise FIle** Share or do **Lift-N-Shift**
+
+## **Azure Queue Storage**
+-   If you have several tasks then add to queue storage and it will save the messages for services to pick and use.
+-   **Scalable Asynchronous Processing**
+
+## **Azure Table Storage**
+-   It is used for storing **Semi-Structured** Data in the table format.
+-   Use when you have no need for Foreign Joins, Foreign Keys or Strict Schema
+-   Designed for **Fast Access**.
+
+## **Azure Disk Storage**
+-   Disk emulation in Cloud
+-   Can be in:
+    -   ### Managed:
+        -    Managed Disk
+    -   ### UnManaged form
+        -   It is Stored in the BLOB sotrage and is unmanaged by the cloud. User has to maange it.
+
+## **Azure Storage Redundancy**
 -   **LRS (Locally Redundant Storage)**:
     -   **Data Replication** 3 times within **same Data Center**
 -   **ZRS(Zone-redundant Storage)** :
@@ -241,6 +277,31 @@ https://readme.so/editor
     -   Similar to GRS but provides **read access** to data in the **secondary region** even in the case of a **primary region outage**.
 -   **RA-GZRS(Read-access Geo-zone-redundant Storage)** :  
     -   Provides read access to data in both the **secondary region** and across **multiple Availability Zones** within the **Primary region**.
+
+# **Azure Database Services**
+
+## **Azure Cosmos Database**
+-   Storing **Semi-Structured** Data.
+-   Globally Distributed, so data can be ***REPLICATED*** Geographically (6 Locations)
+-   Multiple APIs Support (***SQL, MongoDB, Cassandra, Germlin, Table Storage***)
+-   Makes easy to access COSMOS DB data using the ***API*** calls from the above list.
+-   Also, simplifies the process of **Data Migration**
+-   Designed For:
+    -   **Highly Responsive**
+    -   **Multi-Regional**
+
+## **Azure SQL Database**
+-   Storing **Structured** Data
+-   ***High-Performance, Fully Managed, Secure*** Database
+-   What Does **Azure SQL** provide??? (Bolunga to Gaand fat jayegi)
+    -   **SQL Database**: 
+    -   **Managed Instance**: Full Capebalities of SQL Infra on CLOUD $$..
+    -   **SQL Data Warehouse**: For Big Data and Parallel Computing
+    -   **SQL VM**: Install SERVER on VM, Security, monitoring and etc.
+    -   **DB for PostgreSQL**
+    -   **DB for MySQL**
+    -   ****
+
 
 # Definitions
 
