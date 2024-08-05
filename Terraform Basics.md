@@ -92,7 +92,7 @@ sudo yum -y install terraform
 
 # **TERRAFORM WORKFLOW**
 
-![alt text](image.png)
+![alt text](images/image.png)
 Terraform uses **CHANGE AUTOMATION** to apply and review complex **Changesets**.
 
 `WRITE ---> PLAN ---> APPLY`
@@ -109,7 +109,7 @@ Terraform uses **CHANGE AUTOMATION** to apply and review complex **Changesets**.
 
 - Creates a Dependency Graph based on declared **Dependencies** and **Determines** the order in which the resources needs to be processed.
 - **Parallelism** can be achieved by Grouping the Independent Resources together and processing it **concurrently**.
-  ![alt text](image-1.png):
+  ![alt text](images/image-1.png):
 - **STEPS**
   - Resource Declarations
   - Dependencies
@@ -372,8 +372,8 @@ terraform apply -var 'aws_region=us-east-1'
 
 - Can add a condiiton to Validate the varialbe value.
 - Making some set of Rules for variable value to follow.
-  > ![alt text](image-2.png)
-  > ![alt text](image-3.png)
+  > ![alt text](images/image-2.png)
+  > ![alt text](images/image-3.png)
     ```
         variable "varName" {
             description = "Why this kolaveri di??"
