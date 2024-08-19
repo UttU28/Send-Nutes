@@ -1,1 +1,2 @@
 # Send-Nutes
+kinematic equations
